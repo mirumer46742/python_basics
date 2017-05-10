@@ -1,0 +1,21 @@
+from sys import argv
+
+#script=raw_input("What's the script name?")
+#first=raw_input("What's the first variable name?")
+#second=raw_input("What's the second variable name?")
+#third=raw_input("What's the third variable name?")
+
+script, first, second, third = argv
+
+print "The script is called:", script
+print "Your first variable is:", first
+print "Your second variable is:", second
+print "Your third variable is:", third
+
+script=raw_input("What's the script name?")
+first=raw_input("What's the first variable name?")
+
+
+print "The raw input script is",script
+print "The raw input variable is",first
+ 

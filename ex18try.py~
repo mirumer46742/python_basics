@@ -1,0 +1,8 @@
+
+def print_one(arg1):
+    print "This function with one agrument as: %r" % arg1
+
+
+
+
+print_one("Hello World")
