@@ -14,5 +14,5 @@ for one_line in fileheader:
 
 print "The distinct words and their occurances are:" + "\n" + '.'*50
 
-for  [word , occur]  in dictionary.items(): 
-  print [word , occur]
+for  (word , occur)  in dictionary.items(): 
+  print (word , occur)
