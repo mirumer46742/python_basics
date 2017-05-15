@@ -1,56 +1,55 @@
-mylist=[56700,121,1151,222,122,115,666,119,152,156,78111]
+mylist=[56700,777,123,1151,222,121,115,666,119,152,156,78111]
 length_list=[]
 small_list=[]
-test_list=[]
 rem_list=[]
-rem_list2=[]
 count_list=[]
-count_list2=[]
-maximum_list=[]
 final_list=[]
-index_list=[]
-index_list2=[]
+last_list=[]
+dictionary={}
 
 print '-'*60+"\n"
 print "Actual list is:", mylist
 
-#Inserting length of each value in digit_list
+#Inserting length of each value in length_list
 for num in mylist:
     length_list.append(len(str(num)))
     
-#print keylist with less digits
+#print list with less no. of digits
 for num in mylist:
     if min(length_list)==len(str(num)):
         small_list.append(num) 
 print '-'*60+"\n"
-print "List of least no. of digits:", small_list
+print "List with least no. of digits:", small_list
 print "\n"+'-'*60
 
-count=0
+
 for num in small_list:
+    #break numbers in digits and make their remainder list
     while num!=0:        
         rem=num%10
         rem_list.append(rem)
-        num=num/10 
-    #print "Rem List is:",rem_list
-    rem_list2.append(rem_list)
-    
+        num=num/10
+    #Count the occurances of each digit in number and take their max
     for n in rem_list:
         count_list.append(rem_list.count(n))
-    #print "Count List is:",count_list
-    count_list2.append(count_list)
-    index=count_list2.index(max(count_list2))
-     
-    
+    final_list.append(max(count_list))
+    #reset count and remainder list after each iteration
     count_list=[]
     rem_list=[]
+#print "The List of occurances are:", final_list
 
-#for n in count_list2:
-#    index_list2.append(max(count_list2))
-#   index=count_list2.index(max(count_list2))
-    
-print "The smallest number with minimum unique numbers:",small_list[index]
-print '-'*60
-#print "Index List is: ", index_list2
-#print "\n Count LIst 2 is:",count_list2 
-#print "Rem LIst 2 is:",rem_list2
+
+#zip() takes corresponding values from two lists
+#dict() makes the value pairs a a dictionary
+dictionary = dict(zip(small_list, final_list))
+
+#append keys from dictionary to a list which has got max() values
+for key,val in dictionary.items():
+    if val == max(dictionary.values()):
+        last_list.append(key)
+                
+print "\nThe list of numbers with max. no. of same digits:",last_list
+print "\n"+'-'*60
+
+print "\nThe Smallest one:",min(last_list)
+print "\n"+'-'*60
