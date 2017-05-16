@@ -1,4 +1,4 @@
-mylist=[56700,777,123,1151,222,121,115,666,119,152,156,78111]
+mylist=[56700,777,1151,222,121,666,119,152,78111]
 length_list=[]
 small_list=[]
 rem_list=[]
@@ -7,8 +7,8 @@ final_list=[]
 last_list=[]
 dictionary={}
 
-print '-'*60+"\n"
-print "Actual list is:", mylist
+print '-'*70
+print "Actual list:", mylist
 
 #Inserting length of each value in length_list
 for num in mylist:
@@ -18,9 +18,9 @@ for num in mylist:
 for num in mylist:
     if min(length_list)==len(str(num)):
         small_list.append(num) 
-print '-'*60+"\n"
-print "List with least no. of digits:", small_list
-print "\n"+'-'*60
+print '-'*70+"\n"
+print "The list with least no. of digits:", small_list
+print "\n"+'-'*70
 
 
 for num in small_list:
@@ -49,7 +49,7 @@ for key,val in dictionary.items():
         last_list.append(key)
                 
 print "\nThe list of numbers with max. no. of same digits:",last_list
-print "\n"+'-'*60
+print "\n"+'-'*70
 
-print "\nThe Smallest one:",min(last_list)
-print "\n"+'-'*60
+print "The Smallest one:",min(last_list)
+print '-'*70
